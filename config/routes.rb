@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :blogs
+
+  resources :blogs do
+    collection do
+      get 'search'
+    end
+  end
+
+#  get 'blogs/:id' => "blogs#search"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

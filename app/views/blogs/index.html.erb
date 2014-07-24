@@ -4,15 +4,15 @@
 </div>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:blog_logo_url) %></th>
-      <th><%= model_class.human_attribute_name(:lead) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
+  <tr>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:blog_logo_url) %></th>
+    <th><%= model_class.human_attribute_name(:lead) %></th>
+    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
   </thead>
   <tbody>
-    <% @blogs.each do |blog| %>
+  <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.name %></td>
         <td><%= image_tag(blog.blog_logo_url(:thumb).to_s)%></td>
@@ -27,7 +27,7 @@
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
