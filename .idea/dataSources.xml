@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4176933581">
+    <data-source source="LOCAL" name="Rails ontrack: development" uuid="91d56c24-b397-47fa-b606-086d7eff0f1d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ontrack_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ontrack: test" uuid="15de8b6c-a543-4f25-a585-8f5659da3c0d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ontrack_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ontrack: production" uuid="a1c63773-4ab9-4dbf-a1d3-71a5bcdf5f77">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ontrack_production</jdbc-url>
+      <user-name>ontrack</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe5dfe4dffedff8dfebdfe9dfe1dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

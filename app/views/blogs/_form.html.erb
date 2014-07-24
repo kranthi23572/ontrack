@@ -1,0 +1,25 @@
+<%= form_for @blog, :html => {:class => 'form-horizontal', :multipart => true, validate: true} do |f| %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :blog_logo, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :blog_logo %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :lead, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :lead, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), blogs_path, :class => 'btn' %>
+    </div>
+<% end %>
