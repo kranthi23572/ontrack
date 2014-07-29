@@ -45,6 +45,11 @@ gem "less-rails"
 gem "rmagick"
 gem 'carrierwave'
 gem 'rails4_client_side_validations'
+
+gem 'rspec-rails', '~> 3.0.0', group: [:development, :test]
+
+gem 'gmaps4rails'
+
 #gem 'client_side_validations'
 #gem 'strong_parameters'
 #gem 'html5_validators'

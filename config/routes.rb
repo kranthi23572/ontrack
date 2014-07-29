@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  post 'contacts/form'
+  get 'contacts/form'
+
   resources :blogs do
     collection do
       get 'search'

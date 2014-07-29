@@ -40,32 +40,34 @@
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top"> <!--navbar-inverse-->
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" style="margin-left: -285px" href="#">RUBYRAILS-ONTRACK</a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li>
-            <div class="form-inline">
-              <%= form_tag(search_blogs_path, :method => :get) do %>
-                  <%= text_field_tag "search", params[:search], :placeholder => 'Search', :class => "form-control down" %>
-                  <%= submit_tag 'Search', :name => nil, :class => "btn btn-info" %>
-              <% end %>
-            </div>
-          </li>
+<div id="wrapper">
+  <div class="navbar navbar-fixed-top"> <!--navbar-inverse-->
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" style="margin-left: -285px" href="#">ONTRACK</a>
+
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li>
+              <div class="form-inline">
+                <%= form_tag(search_blogs_path, :method => :get) do %>
+                    <%= text_field_tag "search", params[:search], :placeholder => 'Search', :class => "form-control down" %>
+                    <%= submit_tag 'Search', :name => nil, :class => "btn btn-info" %>
+                <% end %>
+              </div>
+            </li>
           </ul>
         </div>
-          <div class="nav-collapse pull-right">
-            <ul class="nav">
+        <div class="nav-collapse pull-right">
+          <ul class="nav">
             <li><%= link_to "ABOUT US", blogs_path %></li>
             <li><%= link_to "BLOGS", blogs_path %></li>
-            <li><%= link_to "CONTACT", blogs_path %></li>
+            <li><%= link_to "CONTACT", contacts_form_path %></li>
             <li>
               <div class="form-inline">
                 <%= form_tag(search_blogs_path, :method => :get) do %>
@@ -81,28 +83,27 @@
       <!--/.nav-collapse -->
     </div>
   </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Link1", "/path1" %></li>
-          <li><%= link_to "Link2", "/path2" %></li>
-          <li><%= link_to "Link3", "/path3" %></li>
-        </ul>
-      </div>
-    </div>
-    <div class="span9">
-      <%= bootstrap_flash %>
+  <div class="conainer-fluid">
+    <div class="row-fluid">
+      <!--<div class="span3">-->
+      <!--<div class="well sidebar-nav">-->
+      <!--<ul class="nav nav-list">-->
+      <!--<li class="nav-header">Sidebar</li>-->
+      <!--<li><%#= link_to "Link1", "/path1" %></li>-->
+      <!--<li><%#= link_to "Link2", "/path2" %></li>-->
+      <!--<li><%#= link_to "Link3", "/path3" %></li>-->
+      <!--</ul>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="span9">-->
+      <!--<%= bootstrap_flash %>-->
       <%= yield %>
-        </div>
+      <!--</div>-->
+    </div>
   </div>
-</div>
- <footer>
-    <div class="container" style="  bottom: 0;">
+  <footer>
+    <div class="container">
       <div class="row">
         <div class="span2 offset2">
           <h4>Company</h4>
@@ -133,6 +134,7 @@
       </div>
     </div>
   </footer>
+</div>
 
 </body>
 </html>

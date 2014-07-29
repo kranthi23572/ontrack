@@ -1,0 +1,50 @@
+<%= form_for Contact.new, url: contacts_form_path, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :avatar, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :avatar %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :phone, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :phone, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :company_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :company_name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :about_yourself, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'text_area' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :expert_in, :class => 'control-label' %>
+      <div class="controls">
+        <%= select_tag "subsribe_name", options_for_select(NAMES), :class => 'form-control' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :other_subscribe, :class => 'control-label' %>
+      <div class="controls">
+        <%= select_tag "subsribe_name", options_for_select(NAMES), :class => 'form-control' %>
+      </div>
+    </div>
+<% end %>

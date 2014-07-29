@@ -21,3 +21,6 @@ module Ontrack
     # config.i18n.default_locale = :de
   end
 end
+
+
+NAMES = %w(FIRST SECOND)
