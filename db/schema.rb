@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729084641) do
+ActiveRecord::Schema.define(version: 20140730073016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140729084641) do
     t.boolean  "subscribe"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "blog_name"
   end
 
   create_table "dont_knows", force: true do |t|
