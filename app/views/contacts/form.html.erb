@@ -13,45 +13,19 @@
       </div>
   <% end %>
 
-  <%= form_for Contact.new, url: contacts_form_path, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
-      <div class="btn-group" data-toggle="buttons-radio">
-        <%= f.radio_button :write_blog, "first", :checked => true %>
-        <%= f.label "I am interested to write a blog" %>
-      </div>
-      <p>
+  <div class="btn-group" data-toggle="buttons-radio">
+    <input type="radio" onchange="hideFirst(this);" name="write_blog" checked = "checked">
+    <%= label_tag "I am interested to write a blog" %>
+  </div>
+  <p>
 
-      <div class="btn-group" data-toggle="buttons-radio">
-        <%= f.radio_button :write_blog, "second", :checked => false %>
-        <%= f.label "To subscribe" %>
-      </div>
-      </p>
-      <div class="" id="sub">
-        <div class="control-group">
-          <%= f.label :name, :class => 'control-label' %>
-          <div class="controls">
-            <%= f.text_field :name, :class => 'text_field', :required => true %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :email, :class => 'control-label' %>
-          <div class="controls">
-            <%= f.text_field :email, :class => 'text_field' %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :subscribe_name, :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :subscribe_name, options_for_select(@blogs), :class => 'form-control' %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :what_you_like, :class => 'control-label' %>
-          <div class="controls">
-            <%= f.text_area :description, :class => 'text_field' %>
-          </div>
-        </div>
-      </div>
-      <div class="" id="write">
+  <div class="btn-group" data-toggle="buttons-radio">
+    <input type="radio" onchange="hideSecond(this);" name="write_blog" checked = false >
+    <%= label_tag "To subscribe" %>
+  </div>
+  </p>
+  <%= form_for @contact, url: contacts_form_path, :html => {:class => 'form-horizontal', :multipart => true} do |f| %>
+      <div class="" id="">
         <div class="control-group">
           <%= f.label :name, :class => 'control-label' %>
           <div class="controls">
@@ -64,6 +38,7 @@
             <%= f.text_field :email, :class => 'text_field' %>
           </div>
         </div>
+        <%#if value == 0%>
         <div class="control-group">
           <%= f.label 'avatar', :class => 'control-label' %>
           <div class="controls">
@@ -82,18 +57,21 @@
             <%= f.text_field :company_name, :class => 'text_field' %>
           </div>
         </div>
+            <%#end%>
         <div class="control-group">
           <%= f.label 'about_yourself', :class => 'control-label' %>
           <div class="controls">
             <%= f.text_area :description, :class => 'text_area' %>
           </div>
         </div>
-        <div class="control-group">
+        <%#if value == 0%>
+      <div class="control-group">
           <%= f.label :expert_in, :class => 'control-label' %>
           <div class="controls">
             <%= f.select :blog_name, options_for_select(@blogs), :prompt => "SELECT", :class => 'form-control' %>
           </div>
         </div>
+            <%#end%>
         <div class="control-group">
           <%= f.label :other_subscribe, :class => 'control-label' %>
           <div class="controls">
@@ -110,7 +88,6 @@
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")), blogs_path, :class => 'btn' %>
       </div>
   <% end %>
-
 </div>
 
 <p>
@@ -129,25 +106,56 @@
         });
     }, 10000);
 
-    var radios = document.getElementsByName("contact[write_blog]");
-    var subscribe = document.getElementById("sub");
-    var writeblog = document.getElementById("write");
-    subscribe.style.display = 'none';   // show
-    writeblog.style.display = 'block'; //'none';// hide
-    for (var i = 0; i < radios.length; i++) {
-        radios[i].onclick = function () {
-            var val = this.value;
-            if (val == 'first') {
-                subscribe.style.display = 'none';
-                writeblog.style.display = 'block';
-            }
-            else if (val == 'second') {
-                subscribe.style.display = 'block';
-                writeblog.style.display = 'none';
-            }
-        }
 
+
+//    function render_partial1() {
+//        $('#partial-area2').hide();
+
+//        $('#partial-area1').show();
+//    }
+//    function render_partial2() {
+//        $('#partial-area1').hide();
+
+//        $('#partial-area2').show();
+//    }
+
+
+    function hideFirst(value) {
+        if (value.checked) {
+            var js_var = 1;
+//            document.getElementById("sub").style.visibility="hidden";
+//            document.getElementById("write").style.visibility="visible";
+            <% value = 0 %>
+        }
     }
+
+    function hideSecond(value) {
+        if (value.checked) {
+//            document.getElementById("sub").style.visibility="visible";
+//            document.getElementById("write").style.visibility="hidden";
+            <% value = 1 %>
+        }
+    }
+
+    //    var radios = document.getElementsByName("contact[write_blog]");
+    //    var subscribe = document.getElementById("sub");
+    //    var writeblog = document.getElementById("write");
+    //    subscribe.style.display = 'none';   // show
+    //    writeblog.style.display = 'block'; //'none';// hide
+    //    for (var i = 0; i < radios.length; i++) {
+    //        radios[i].onclick = function () {
+    //            var val = this.value;
+    //            if (val == 'first') {
+    //                subscribe.style.display = 'none';
+    //                writeblog.style.display = 'block';
+    //            }
+    //            else if (val == 'second') {
+    //                subscribe.style.display = 'block';
+    //                writeblog.style.display = 'none';
+    //            }
+    //        }
+    //
+    //    }
 
     function createSidebarLi(json) {
         return ("<li><a>" + json.name + "</a></li>");

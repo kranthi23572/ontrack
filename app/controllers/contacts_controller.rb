@@ -1,13 +1,18 @@
 class ContactsController < ApplicationController
 
   def form
+    @contact = Contact.new
     @blogs = Blog.all_blogs
     if !params[:contact].nil?
       @contact = Contact.new(contact_params)
-      @contact_success = "Thanks for subscribing we will not send you uwanted pramotional mails other than blog updates" if @contact.save!
+      flash[:success] = "Thanks for subscribing we will not send you uwanted pramotional mails other than blog updates" if @contact.save!
     end
   rescue
-    @contact_error = "Something went wrong please try again"
+    flash[:error] = "Something went wrong please try again"
+  end
+
+  def new
+    @contact = Contact.new
   end
 
   private

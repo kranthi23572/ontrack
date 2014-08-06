@@ -41,11 +41,4 @@ ActiveRecord::Schema.define(version: 20140730073016) do
     t.string   "blog_name"
   end
 
-  create_table "dont_knows", force: true do |t|
-    t.string   "name"
-    t.boolean  "check"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
