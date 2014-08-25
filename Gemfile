@@ -20,5 +20,6 @@ gem "rmagick"
 gem 'carrierwave'
 gem 'rspec-rails', '~> 3.0.0', group: [:development, :test]
 gem 'gmaps4rails'
-gem 'dynamic_form'
 gem 'thin'
+gem 'devise'
+gem 'cancan'
